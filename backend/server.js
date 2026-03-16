@@ -13,6 +13,12 @@ app.use("/api/auth", authRoutes);
 app.use("/api/items", itemRoutes);
 
 
-app.listen(3001, () => {
-  console.log("Servidor corriendo en puerto 3001");
+app.get("/", (req, res) => {
+  res.send("API Biblioteca Multimedia funcionando");
+});
+
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log("Servidor corriendo en puerto " + PORT);
 });
