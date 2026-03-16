@@ -1,4 +1,4 @@
-# Biblioteca Multimedia
+# Multimedia Library App
 
 Aplicación web para gestionar una biblioteca multimedia personal, permitiendo registrar, buscar y administrar libros, películas y música en un catálogo digital.
 
