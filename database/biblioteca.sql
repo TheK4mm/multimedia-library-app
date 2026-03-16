@@ -1,5 +1,3 @@
-CREATE DATABASE biblioteca_personal;
-
 CREATE TABLE usuarios (
     id SERIAL PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
