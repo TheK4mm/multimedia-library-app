@@ -19,8 +19,11 @@ Aplicación web para gestionar una biblioteca multimedia personal, permitiendo r
 - PostgreSQL
 
 ## Deploy
-- Vercel para el Frontend  
-- Render para el Backend
+- Vercel para el Frontend:
+https://multimedia-library-app.vercel.app
+
+- Render para el Backend:
+https://multimedia-library-app.onrender.com
 
 # Funcionalidades
 
