@@ -51,8 +51,3 @@ https://multimedia-library-app.onrender.com
 - Interfaz moderna desarrollada con React
 - Gestión completa de catálogo multimedia
 
-# Autores
-
-- Juan Camilo Vásquez
-- Luis David Puentes
-
