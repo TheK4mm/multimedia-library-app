@@ -6,8 +6,8 @@ Aplicación web para gestionar una biblioteca multimedia personal, permitiendo r
 
 ## Frontend
 - React
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
 - Axios
 
