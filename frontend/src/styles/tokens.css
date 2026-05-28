@@ -1,0 +1,114 @@
+/* =====================================================================
+   Design tokens
+   ---------------------------------------------------------------------
+   Single source of truth for colors, typography, spacing, radii, shadows
+   and motion. Components reference these via var(--token).
+   ===================================================================== */
+:root {
+  /* ---------- Brand palette (warm, library-inspired) ---------- */
+  --color-bg-app:        #f5f1ea;
+  --color-bg-surface:    #ffffff;
+  --color-bg-elevated:   #fbf7f0;
+  --color-bg-subtle:     #efe7d7;
+  --color-bg-overlay:    rgba(20, 18, 14, 0.55);
+
+  --color-text-primary:   #2c2418;
+  --color-text-secondary: #6a5a3c;
+  --color-text-muted:     #9a8e74;
+  --color-text-inverse:   #fdfbf6;
+
+  --color-border:        #e2d6bc;
+  --color-border-strong: #c7b28a;
+
+  --color-brand-50:  #fbf6ec;
+  --color-brand-100: #f1e6cb;
+  --color-brand-200: #e2cc9b;
+  --color-brand-300: #cba968;
+  --color-brand-400: #b08947;
+  --color-brand-500: #8b6f3d;
+  --color-brand-600: #6e5630;
+  --color-brand-700: #503e22;
+
+  --color-accent:        #c0392b;
+  --color-accent-hover:  #a93226;
+
+  --color-success: #2f8a4a;
+  --color-warning: #c98b1b;
+  --color-danger:  #c0392b;
+  --color-info:    #2c6b8f;
+
+  /* Per-media-type accents */
+  --color-media-book:  #8b6f3d;
+  --color-media-movie: #2c6b8f;
+  --color-media-music: #7d3d8b;
+
+  /* ---------- Typography ---------- */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', 'Cormorant Garamond', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --fs-xs:   0.75rem;
+  --fs-sm:   0.875rem;
+  --fs-base: 1rem;
+  --fs-md:   1.125rem;
+  --fs-lg:   1.25rem;
+  --fs-xl:   1.5rem;
+  --fs-2xl:  1.875rem;
+  --fs-3xl:  2.25rem;
+  --fs-4xl:  3rem;
+
+  --lh-tight:  1.2;
+  --lh-normal: 1.5;
+  --lh-loose:  1.75;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+
+  /* ---------- Spacing (4 px grid) ---------- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* ---------- Radii ---------- */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  20px;
+  --radius-full: 999px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-xs: 0 1px 2px rgba(20, 18, 14, 0.06);
+  --shadow-sm: 0 2px 6px rgba(20, 18, 14, 0.08);
+  --shadow-md: 0 6px 16px rgba(20, 18, 14, 0.10);
+  --shadow-lg: 0 12px 32px rgba(20, 18, 14, 0.14);
+  --shadow-xl: 0 24px 60px rgba(20, 18, 14, 0.20);
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast:   120ms;
+  --duration-base:   200ms;
+  --duration-slow:   320ms;
+
+  /* ---------- Layout ---------- */
+  --shell-sidebar-width: 240px;
+  --shell-topbar-height: 64px;
+  --content-max-width:   1240px;
+  --content-gutter:      var(--space-6);
+
+  /* ---------- Z-index ---------- */
+  --z-base:    1;
+  --z-sticky:  100;
+  --z-modal:   1000;
+  --z-toast:   2000;
+}

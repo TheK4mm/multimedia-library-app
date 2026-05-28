@@ -1,0 +1,107 @@
+.page {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.coverColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.coverShell {
+  width: 100%;
+}
+
+.actionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  line-height: 1.15;
+}
+
+.creator {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-md);
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.metaItem {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.metaLabel {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+  font-weight: var(--fw-semi);
+}
+
+.metaValue {
+  font-size: var(--fs-base);
+  color: var(--color-text-primary);
+  font-weight: var(--fw-semi);
+}
+
+.section { margin-top: var(--space-4); }
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-3);
+}
+
+.prose {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  white-space: pre-wrap;
+  color: var(--color-text-primary);
+  line-height: var(--lh-loose);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+  font-weight: var(--fw-semi);
+}
+.backLink:hover { color: var(--color-brand-600); }
+
+@media (max-width: 880px) {
+  .page { grid-template-columns: 1fr; }
+}

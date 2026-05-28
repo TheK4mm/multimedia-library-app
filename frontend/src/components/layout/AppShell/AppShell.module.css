@@ -1,0 +1,25 @@
+.shell {
+  display: grid;
+  grid-template-columns: var(--shell-sidebar-width) 1fr;
+  min-height: 100vh;
+  background: var(--color-bg-app);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* prevent grid overflow */
+}
+
+.content {
+  flex: 1;
+  padding: var(--space-8) var(--content-gutter);
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 880px) {
+  .shell { grid-template-columns: 1fr; }
+  .content { padding: var(--space-6) var(--space-4); }
+}

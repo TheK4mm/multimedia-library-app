@@ -1,0 +1,42 @@
+.cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(135deg, var(--color-brand-200), var(--color-brand-400));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-inverse);
+  overflow: hidden;
+}
+
+.book  { background: linear-gradient(160deg, #b08947, #503e22); }
+.movie { background: linear-gradient(160deg, #4d8bb3, #1f4665); }
+.music { background: linear-gradient(160deg, #a364b5, #4e1f5e); }
+
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallbackIcon {
+  opacity: 0.85;
+  transform: scale(1.4);
+}
+
+.year {
+  position: absolute;
+  bottom: var(--space-2);
+  right: var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--color-text-inverse);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(4px);
+}

@@ -1,24 +1,20 @@
-const express = require("express");
-const cors = require("cors");
+const app = require("./src/app");
+const env = require("./src/config/env");
+const db  = require("./src/config/db");
+const logger = require("./src/config/logger");
 
-const authRoutes = require("./routes/authRoutes");
-const itemRoutes = require("./routes/itemRoutes");
+const start = async () => {
+  try {
+    await db.ping();
+    logger.info("Conectado a PostgreSQL");
+  } catch (err) {
+    logger.error("No se pudo conectar a PostgreSQL:", err.message);
+    if (env.isProd) process.exit(1);
+  }
 
-const app = express();
+  app.listen(env.port, () => {
+    logger.info(`Servidor escuchando en http://localhost:${env.port}`);
+  });
+};
 
-app.use(cors());
-app.use(express.json());
-
-app.use("/api/auth", authRoutes);
-app.use("/api/items", itemRoutes);
-
-
-app.get("/", (req, res) => {
-  res.send("API Biblioteca Multimedia funcionando");
-});
-
-const PORT = process.env.PORT || 3001;
-
-app.listen(PORT, () => {
-  console.log("Servidor corriendo en puerto " + PORT);
-});
+start();

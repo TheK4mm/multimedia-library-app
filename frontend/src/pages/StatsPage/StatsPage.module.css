@@ -1,0 +1,68 @@
+.page { display: flex; flex-direction: column; gap: var(--space-6); }
+
+.header h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+}
+.header p {
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.distribution {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.distributionTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-4);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.barLabel {
+  width: 110px;
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--fw-semi);
+}
+
+.barTrack {
+  flex: 1;
+  height: 10px;
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-brand-300), var(--color-brand-500));
+  border-radius: var(--radius-full);
+  transition: width var(--duration-slow) var(--ease-out);
+}
+
+.barFillBook  { background: linear-gradient(90deg, #cba968, #503e22); }
+.barFillMovie { background: linear-gradient(90deg, #4d8bb3, #1f4665); }
+.barFillMusic { background: linear-gradient(90deg, #a364b5, #4e1f5e); }
+
+.barValue {
+  width: 56px;
+  text-align: right;
+  font-weight: var(--fw-semi);
+}
