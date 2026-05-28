@@ -2,7 +2,7 @@
 
 Aplicación web para gestionar una **biblioteca multimedia personal**: libros, películas y música organizados en un único catálogo digital, con búsqueda, filtros, estados de progreso, favoritos, valoraciones y un panel de estadísticas.
 
-> Versión **2.0** — refactor completo a una arquitectura por capas (backend), un sistema de diseño con tokens y CSS modular (frontend), y un modelo de datos enriquecido (base de datos).
+Versión **2.0** — refactor completo a una arquitectura por capas (backend), un sistema de diseño con tokens y CSS modular (frontend), y un modelo de datos enriquecido (base de datos).
 
 ## Tabla de contenido
 - [Arquitectura](#arquitectura)
@@ -226,7 +226,7 @@ cd frontend && npm test
 | -------------------- | -------------------------------------------------------- | ---------------------------- |
 | `REACT_APP_API_URL`  | `https://multimedia-library-app.onrender.com/api`        | URL base de la API           |
 
-## Despliegue
+## Despliegue (en pausa)
 
 - **Frontend (Vercel):** https://multimedia-library-app.vercel.app
 - **Backend (Render):** https://multimedia-library-app.onrender.com
@@ -246,6 +246,3 @@ cd frontend && npm test
 - Diseño responsive con sidebar colapsable en móviles.
 - Estados vacíos, de carga y de error en todas las vistas.
 
-## Licencia
-
-ISC.
