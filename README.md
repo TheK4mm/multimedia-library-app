@@ -226,7 +226,9 @@ cd frontend && npm test
 | -------------------- | -------------------------------------------------------- | ---------------------------- |
 | `REACT_APP_API_URL`  | `https://multimedia-library-app.onrender.com/api`        | URL base de la API           |
 
-## Despliegue (en pausa)
+## Despliegue
+
+Importante: Deploy actualmente en pausa
 
 - **Frontend (Vercel):** https://multimedia-library-app.vercel.app
 - **Backend (Render):** https://multimedia-library-app.onrender.com
