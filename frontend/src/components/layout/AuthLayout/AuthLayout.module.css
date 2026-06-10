@@ -8,62 +8,40 @@
 .hero {
   position: relative;
   background:
-    linear-gradient(135deg, rgba(80, 62, 34, 0.92), rgba(110, 86, 48, 0.82)),
+    linear-gradient(135deg, rgba(28, 22, 12, 0.94) 0%, rgba(80, 62, 34, 0.78) 45%, rgba(176, 137, 71, 0.55) 100%),
     url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=70");
   background-size: cover;
   background-position: center;
   color: var(--color-text-inverse);
-  padding: var(--space-12);
+  padding: var(--space-16) var(--space-12);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  font-family: var(--font-display);
-  font-size: var(--fs-xl);
-  font-weight: var(--fw-bold);
-  letter-spacing: 0.02em;
-}
-
-.brandMark {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.16);
-  display: flex;
-  align-items: center;
   justify-content: center;
 }
 
-.heroBody { max-width: 460px; }
-.heroBody h1 {
-  font-size: var(--fs-4xl);
-  line-height: 1.1;
-  color: var(--color-text-inverse);
-  margin-bottom: var(--space-4);
-}
-.heroBody p {
-  font-size: var(--fs-md);
-  color: rgba(255, 255, 255, 0.85);
-  line-height: var(--lh-loose);
+.heroBody { max-width: 480px; }
+
+.accent {
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-bottom: var(--space-6);
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--color-brand-300), var(--color-accent));
 }
 
-.heroFooter {
-  display: flex;
-  gap: var(--space-6);
-  font-size: var(--fs-sm);
-  color: rgba(255, 255, 255, 0.7);
-}
-.heroFooter strong {
-  display: block;
-  font-family: var(--font-display);
+.heroBody h1 {
+  font-size: var(--fs-4xl);
+  line-height: var(--lh-tight);
   color: var(--color-text-inverse);
-  font-size: var(--fs-xl);
-  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-5);
+  text-shadow: 0 2px 18px rgba(20, 18, 14, 0.4);
+}
+.heroBody p {
+  font-size: var(--fs-lg);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: var(--lh-normal);
+  max-width: 38ch;
 }
 
 .form {

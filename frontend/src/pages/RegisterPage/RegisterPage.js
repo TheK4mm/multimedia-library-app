@@ -48,7 +48,7 @@ export default function RegisterPage() {
 
   return (
     <AuthLayout
-      title="Crear cuenta"
+      title="Crea tu cuenta"
       subtitle="Empieza tu biblioteca personal en segundos."
       footer={<>¿Ya tienes cuenta? <Link to="/login">Iniciar sesión</Link></>}
     >
@@ -58,7 +58,6 @@ export default function RegisterPage() {
         <Input
           label="Usuario"
           autoComplete="username"
-          required
           autoFocus
           leftIcon={<Icon name="user" size={16} />}
           value={form.username}
@@ -85,7 +84,7 @@ export default function RegisterPage() {
           label="Contraseña"
           type="password"
           autoComplete="new-password"
-          required
+          passwordToggle
           value={form.password}
           onChange={(e) => update("password", e.target.value)}
           helpText="Mínimo 6 caracteres."
@@ -95,7 +94,7 @@ export default function RegisterPage() {
           label="Confirmar contraseña"
           type="password"
           autoComplete="new-password"
-          required
+          passwordToggle
           value={form.confirm}
           onChange={(e) => update("confirm", e.target.value)}
         />

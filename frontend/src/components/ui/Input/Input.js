@@ -1,15 +1,18 @@
-import React, { forwardRef, useId } from "react";
+import React, { forwardRef, useId, useState } from "react";
 import styles from "./Input.module.css";
+import Icon from "../Icon/Icon";
 
 const Input = forwardRef(function Input(
   {
     id,
     label,
+    type = "text",
     leftIcon,
     rightIcon,
     error,
     helpText,
     required,
+    passwordToggle = false,
     className = "",
     wrapperClassName = "",
     ...rest
@@ -20,6 +23,11 @@ const Input = forwardRef(function Input(
   const inputId = id || `input-${autoId}`;
   const isInvalid = Boolean(error);
 
+  const [revealed, setRevealed] = useState(false);
+  const hasToggle = passwordToggle && type === "password";
+  const inputType = hasToggle && revealed ? "text" : type;
+  const hasRightAdornment = Boolean(rightIcon) || hasToggle;
+
   const fieldClasses = [styles.field, isInvalid ? styles.invalid : "", wrapperClassName]
     .filter(Boolean)
     .join(" ");
@@ -27,7 +35,7 @@ const Input = forwardRef(function Input(
   const inputClasses = [
     styles.input,
     leftIcon ? styles.hasLeftIcon : "",
-    rightIcon ? styles.hasRightIcon : "",
+    hasRightAdornment ? styles.hasRightIcon : "",
     className,
   ]
     .filter(Boolean)
@@ -46,13 +54,26 @@ const Input = forwardRef(function Input(
         <input
           ref={ref}
           id={inputId}
+          type={inputType}
           className={inputClasses}
           aria-invalid={isInvalid || undefined}
           aria-describedby={error ? `${inputId}-error` : helpText ? `${inputId}-help` : undefined}
           required={required}
           {...rest}
         />
-        {rightIcon && <span className={styles.iconRight}>{rightIcon}</span>}
+        {hasToggle ? (
+          <button
+            type="button"
+            className={styles.toggle}
+            onClick={() => setRevealed((v) => !v)}
+            aria-label={revealed ? "Ocultar contraseña" : "Mostrar contraseña"}
+            aria-pressed={revealed}
+          >
+            <Icon name={revealed ? "eye-off" : "eye"} size={16} />
+          </button>
+        ) : (
+          rightIcon && <span className={styles.iconRight}>{rightIcon}</span>
+        )}
       </div>
       {error && (
         <span id={`${inputId}-error`} className={styles.error}>

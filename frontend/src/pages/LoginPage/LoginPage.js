@@ -32,8 +32,8 @@ export default function LoginPage() {
 
   return (
     <AuthLayout
-      title="Bienvenido de vuelta"
-      subtitle="Ingresa con tu cuenta para acceder a tu biblioteca."
+      title="¡Bienvenido/a!"
+      subtitle="Ingresa con tu cuenta para acceder a tu biblioteca personal."
       footer={<>¿Aún no tienes cuenta? <Link to="/register">Crear cuenta</Link></>}
     >
       <form className={styles.form} onSubmit={submit} noValidate>
@@ -42,7 +42,6 @@ export default function LoginPage() {
         <Input
           label="Usuario"
           autoComplete="username"
-          required
           autoFocus
           leftIcon={<Icon name="user" size={16} />}
           value={username}
@@ -53,7 +52,7 @@ export default function LoginPage() {
           label="Contraseña"
           type="password"
           autoComplete="current-password"
-          required
+          passwordToggle
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
