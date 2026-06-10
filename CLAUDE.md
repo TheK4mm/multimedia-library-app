@@ -35,7 +35,7 @@ psql -d biblioteca_personal -f database/seed.sql      # optional demo data (user
 psql -d biblioteca_personal -f database/migration.sql        # only if migrating from schema v1
 psql -d biblioteca_personal -f database/migration_copy.sql   # copies legacy rows into v2
 ```
-The seeded `demo` password hash in `seed.sql` is a placeholder — regenerate locally if you need to log in as demo.
+The seeded `demo` password hash in `seed.sql` is a placeholder — regenerate locally if you need to log in as demo
 
 ## Backend architecture
 
