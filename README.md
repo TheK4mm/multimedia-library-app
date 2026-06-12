@@ -19,10 +19,10 @@ Versión **2.0** — refactor completo a una arquitectura por capas (backend), u
 ## Arquitectura
 
 ```
-┌────────────────────────┐      HTTPS/JSON       ┌──────────────────────────────┐      SQL      ┌──────────────────┐
-│        Frontend        │  ───────────────────► │           Backend            │ ───────────► │     PostgreSQL    │
-│ React 19 + React Router│ ◄─────────────────── │ Express 5 (capas)            │ ◄─────────── │  schema v2        │
-│ Axios + JWT en storage │      Bearer JWT       │ JWT + bcrypt + Zod           │              │  multi-tenant     │
+┌────────────────────────┐      HTTPS/JSON       ┌──────────────────────────────┐      SQL     ┌──────────────────┐
+│        Frontend        │  ───────────────────► │           Backend            │ ───────────► │     PostgreSQL   │
+│ React 19 + React Router│ ◄───────────────────  │ Express 5 (capas)            │ ◄─────────── │  schema v2       │
+│ Axios + JWT en storage │      Bearer JWT       │ JWT + bcrypt + Zod           │              │  multi-tenant    │
 └────────────────────────┘                       └──────────────────────────────┘              └──────────────────┘
 ```
 
@@ -125,10 +125,10 @@ Todas las rutas viven bajo `/api`. Las que requieren sesión esperan `Authorizat
 ### Items
 | Método | Ruta              | Query / Body                                                                 | Auth | Descripción                              |
 | ------ | ----------------- | ---------------------------------------------------------------------------- | :--: | ---------------------------------------- |
-| GET    | `/items`          | `?search&mediaType&status&favorite&sort&page&pageSize`                       |  ✓   | Lista paginada y filtrada del usuario    |
+| GET    | `/items`          | `?search&mediaType&status&favorite&sort&page&pageSize`                       |  ✓   | Lista paginada y filtrada del usuario          |
 | GET    | `/items/stats`    | —                                                                            |  ✓   | Totales por tipo, estado, favoritos, avg |
-| GET    | `/items/:id`      | —                                                                            |  ✓   | Detalle de un item                       |
-| POST   | `/items`          | `{ title, mediaType, year?, creatorName?, coverUrl?, synopsis?, rating?, status?, favorite?, notes? }` |  ✓   | Crea un item                             |
+| GET    | `/items/:id`      | —                                                                            |  ✓   | Detalle de un item                         |
+| POST   | `/items`          | `{ title, mediaType, year?, creatorName?, coverUrl?, synopsis?, rating?, status?, favorite?, notes? }` |  ✓   | Crea un item|
 | PUT    | `/items/:id`      | Cualquier subconjunto del body de POST                                       |  ✓   | Actualiza (sólo campos presentes)        |
 | DELETE | `/items/:id`      | —                                                                            |  ✓   | Elimina                                  |
 
