@@ -224,14 +224,14 @@ cd frontend && npm test
 ### Frontend (`frontend/.env`)
 | Variable             | Por defecto                                              | Descripción                  |
 | -------------------- | -------------------------------------------------------- | ---------------------------- |
-| `REACT_APP_API_URL`  | `https://multimedia-library-app.onrender.com/api`        | URL base de la API           |
+| `REACT_APP_API_URL`  | ``                        | URL base de la API           |
 
 ## Despliegue
 
 Importante: Deploy actualmente en pausa
 
-- **Frontend (Vercel):** https://multimedia-library-app.vercel.app
-- **Backend (Render):** https://multimedia-library-app.onrender.com
+- **Frontend (Vercel):** 
+- **Backend (Render):** 
 
 > Render: el `start` script ejecuta `node server.js`. Recuerda definir las variables de entorno del backend (especialmente `DATABASE_URL`, `JWT_SECRET` y `CORS_ORIGINS` con el dominio de Vercel).
 
