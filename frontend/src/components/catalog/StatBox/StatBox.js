@@ -15,7 +15,7 @@ export default function StatBox({ icon = "book", label, value, hint, tone = "def
   return (
     <div className={`${styles.box} ${TONES[tone] || ""}`}>
       <div className={styles.iconWrap}>
-        <Icon name={icon} size={24} />
+        <Icon name={icon} size={20} />
       </div>
       <div>
         <div className={styles.label}>{label}</div>

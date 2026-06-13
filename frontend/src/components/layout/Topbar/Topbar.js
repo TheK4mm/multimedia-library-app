@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate, useMatch } from "react-router-dom";
 import styles from "./Topbar.module.css";
-import { Button, Icon } from "../../ui";
+import { Icon } from "../../ui";
 
 const TITLES = {
   "/app/dashboard": "Inicio",
@@ -21,6 +21,7 @@ export default function Topbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const inCatalog = useMatch("/app/catalog");
+  const inProfile = useMatch("/app/profile");
 
   const handleQuickSearch = (event) => {
     const value = event.target.value;
@@ -40,30 +41,23 @@ export default function Topbar() {
     <header className={styles.topbar}>
       <div className={styles.title}>{titleFor(location.pathname)}</div>
 
-      <div className={styles.actions}>
-        <div className={styles.search}>
-          <span className={styles.searchIcon}>
-            <Icon name="search" size={16} />
-          </span>
-          <input
-            type="search"
-            placeholder="Buscar en tu biblioteca…"
-            className={styles.searchInput}
-            value={currentSearch}
-            onChange={handleQuickSearch}
-            aria-label="Buscar"
-          />
+      {!inProfile && (
+        <div className={styles.actions}>
+          <div className={styles.search}>
+            <span className={styles.searchIcon}>
+              <Icon name="search" size={16} />
+            </span>
+            <input
+              type="search"
+              placeholder="Buscar en tu biblioteca…"
+              className={styles.searchInput}
+              value={currentSearch}
+              onChange={handleQuickSearch}
+              aria-label="Buscar"
+            />
+          </div>
         </div>
-
-        <Button
-          variant="primary"
-          size="md"
-          leftIcon={<Icon name="plus" size={16} />}
-          onClick={() => navigate("/app/items/new")}
-        >
-          Nuevo
-        </Button>
-      </div>
+      )}
     </header>
   );
 }

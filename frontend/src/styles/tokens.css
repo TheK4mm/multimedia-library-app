@@ -43,7 +43,7 @@
   --color-media-music: #7d3d8b;
 
   /* ---------- Typography ---------- */
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'Poppins', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --font-body:    'Inter', 'Cormorant Garamond', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 

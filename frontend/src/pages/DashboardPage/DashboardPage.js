@@ -1,18 +1,39 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./DashboardPage.module.css";
-import { Button, EmptyState, Icon, Spinner } from "../../components/ui";
+import { Button, EmptyState, Icon, Spinner, useToast } from "../../components/ui";
 import StatBox  from "../../components/catalog/StatBox/StatBox";
 import ItemCard from "../../components/catalog/ItemCard/ItemCard";
 import { useAuth } from "../../context/AuthContext";
 import { useItems, useStats } from "../../hooks/useItems";
+import { itemsApi } from "../../services/itemsApi";
 
 export default function DashboardPage() {
   const { user } = useAuth();
   const navigate = useNavigate();
+  const toast    = useToast();
   const { stats,  loading: loadingStats }  = useStats();
   const { items: recent,    loading: loadingRecent }    = useItems({ sort: "recent", pageSize: 8 });
-  const { items: favorites, loading: loadingFavorites } = useItems({ favorite: "true", pageSize: 6 });
+  const { items: favorites, loading: loadingFavorites, setItems: setFavorites } =
+    useItems({ favorite: "true", pageSize: 6 });
+
+  // Al desmarcar un favorito desaparece al instante de "Tus favoritos";
+  // si la petición falla, se restaura la lista previa.
+  const handleToggleFavorite = async (item) => {
+    const next = !item.favorite;
+    const snapshot = favorites;
+    setFavorites((list) =>
+      next
+        ? list.map((i) => (i.id === item.id ? { ...i, favorite: next } : i))
+        : list.filter((i) => i.id !== item.id)
+    );
+    try {
+      await itemsApi.update(item.id, { favorite: next });
+    } catch (err) {
+      setFavorites(snapshot);
+      toast.error(err.message || "No se pudo actualizar el favorito.");
+    }
+  };
 
   return (
     <div className={styles.page}>
@@ -27,14 +48,6 @@ export default function DashboardPage() {
             tienes pendiente.
           </p>
         </div>
-        <Button
-          variant="primary"
-          size="lg"
-          leftIcon={<Icon name="plus" size={16} />}
-          onClick={() => navigate("/app/items/new")}
-        >
-          Añadir nuevo item
-        </Button>
       </header>
 
       {loadingStats ? (
@@ -108,7 +121,11 @@ export default function DashboardPage() {
         ) : (
           <div className={styles.cardsGrid}>
             {favorites.map((item) => (
-              <ItemCard key={item.id} item={item} />
+              <ItemCard
+                key={item.id}
+                item={item}
+                onToggleFavorite={handleToggleFavorite}
+              />
             ))}
           </div>
         )}
